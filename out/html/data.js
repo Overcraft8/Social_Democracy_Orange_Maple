@@ -4,23 +4,23 @@ const tooltipList = [{
 }, 
 {
     searchString: "PC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Communist Party"
+    explanationText: "The Communist Party"
 },
 {
     searchString: "LPC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Liberal Party"
+    explanationText: "The Liberal Party"
 },
 {
     searchString: "RPC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Reconstruction Party"
+    explanationText: "The Reconstruction Party"
 },
 {
     searchString: "CPC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Conservative Party"
+    explanationText: "The Conservative Party"
 },
 {
     searchString: "SCP", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Social Credit Party"
+    explanationText: "The Social Credit Party"
 }
 ];
 
