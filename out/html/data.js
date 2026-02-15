@@ -3,7 +3,7 @@ const tooltipList = [{
     explanationText: "<img src=img/CCF_logo.jpg> The Co-operative Commonwealth Federation - \n Us"
 }, 
 {
-    searchString: "PC", 
+    searchString: "CP", 
     explanationText: "The Communist Party"
 },
 {
@@ -30,7 +30,7 @@ const colourList = [{
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: "PC", 
+        word: "CP", 
         style: "color: #8B0000; font-weight: bold;"
     },
     {
