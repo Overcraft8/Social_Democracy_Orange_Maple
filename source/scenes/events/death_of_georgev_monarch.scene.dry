@@ -381,7 +381,7 @@ Seldte: "Franz Seldte of the Stahlhelm/SCP",
 Eckener: "the independent republican candidate Hugo Eckener",
 Adenauer: "Konrad Adenauer of the RPC Party",
 Gessler: "Otto Gessler, independent formerly of the LPC",
-Thalmann: "Ernst Tim Buck of the CP",
+Tim_Buck: "Tim Buck of the CP",
 Munzenberg: "Willi Münzenberg of the CP",
 J. S. Woodsworth: "J. S. Woodsworth of the CCF",
 Schumacher: "Kurt Schumacher of the CCF",
@@ -442,7 +442,7 @@ Election results:
 
 [? if Seldte_running : Seldte - [+ Seldte_votes_disp +]% ?]
 
-[? if Thalmann_running : Tim Buck - [+ Thalmann_votes_disp +]% ?]
+[? if Tim_Buck_running : Tim Buck - [+ Tim_Buck_votes_disp +]% ?]
 [? if Munzenberg_running : Münzenberg - [+ Munzenberg_votes_disp +]% ?]
 
 [? if Adenauer_running : Adenauer - [+ Adenauer_votes_disp +]% ?]
@@ -685,8 +685,8 @@ Despite the Nazi threats, supporters of the CCF and the democratic parties refus
 
 
 @election_end
-go-to: eckener_win if winner = "Eckener"; macphail_win if winner = "Macphail"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munzenberg_victory if winner = "Munzenberg" or winner = "Münzenberg"; tim_buck_victory if winner = "Thalmann" or winner = "Tim Buck"; nazis_lose if winner = "J. S. Woodsworth" or winner = "Gessler"; cultural_victory if winner = "Ossietzky" or winner = "Mann"; einstein_victory if winner = "Einstein"
-on-arrival: monarch = winner; monarch = "Tim Buck" if monarch == "Thalmann"; monarch = "Münzenberg" if monarch = "Munzenberg"; monarch = "Göring" if monarch = "Goring"
+go-to: eckener_win if winner = "Eckener"; macphail_win if winner = "Macphail"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munzenberg_victory if winner = "Munzenberg" or winner = "Münzenberg"; tim_buck_victory if winner = "Tim_Buck" or winner = "Tim Buck"; nazis_lose if winner = "J. S. Woodsworth" or winner = "Gessler"; cultural_victory if winner = "Ossietzky" or winner = "Mann"; einstein_victory if winner = "Einstein"
+on-arrival: monarch = winner; monarch = "Tim Buck" if monarch == "Tim_Buck"; monarch = "Münzenberg" if monarch = "Munzenberg"; monarch = "Göring" if monarch = "Goring"
 
 The election has been won by [+ winner_desc +].
 
