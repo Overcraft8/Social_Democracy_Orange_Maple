@@ -1,6 +1,6 @@
 const tooltipList = [{
     searchString: "CCF",
-    explanationText: "<img src=img/CCF_logo.jpg> The Co-operative Commonwealth Federation \n Us"
+    explanationText: "<img src=img/CCF_logo.jpg> The Co-operative Commonwealth Federation - \n Us"
 }, 
 {
     searchString: "PC", 
@@ -8,19 +8,19 @@ const tooltipList = [{
 },
 {
     searchString: "LPC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Communist Party"
+    explanationText: "<img src=img/CCF_logo.jpg> The Liberal Party"
 },
 {
     searchString: "RPC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Communist Party"
+    explanationText: "<img src=img/CCF_logo.jpg> The Reconstruction Party"
 },
 {
     searchString: "CPC", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Communist Party"
+    explanationText: "<img src=img/CCF_logo.jpg> The Conservative Party"
 },
 {
     searchString: "SCP", 
-    explanationText: "<img src=img/CCF_logo.jpg> The Communist Party"
+    explanationText: "<img src=img/CCF_logo.jpg> The Social Credit Party"
 }
 ];
 
