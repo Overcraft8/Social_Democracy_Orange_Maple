@@ -1,6 +1,6 @@
 const tooltipList = [{
     searchString: "CCF",
-    explanationText: "<img/CCF_logo.jpg> The Co-operative Commonwealth Federation \n Us"
+    explanationText: "<out/html/img/CCF_logo.jpg> The Co-operative Commonwealth Federation \n Us"
 }];
 
 
