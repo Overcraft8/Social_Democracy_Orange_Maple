@@ -273,7 +273,7 @@ go-to: coalition_menu
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td><td>!} [+ str_change_lpc +] {!</td></tr>!}
 
