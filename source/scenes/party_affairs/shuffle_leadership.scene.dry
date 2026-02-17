@@ -331,7 +331,7 @@ view-if: n_advisors < 3
 
 @add_scott
 title: Frank Scott
-subtitle: Frank Scott is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+subtitle: Frank Scott is a founding member of the LSR, the CCF's de facto intellectual organization. He is an expert on constitutional law. . {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/ScottFrank.jpg
 tags: center_advisor
@@ -343,7 +343,7 @@ Frank Scott is now an advisor.
 
 @add_coldwell
 title: Major James Coldwell
-subtitle: Major James Coldwell is a long-time party organizer and member of the leadership, serving under Friedrich Ebert. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial CCF affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
 card-image: img/portraits/ColdwellRudolf.jpg
 tags: center_advisor
@@ -355,7 +355,7 @@ Major James Coldwell is now an advisor.
 
 @add_douglas
 title: Tommy Douglas
-subtitle: Tommy Douglas is the last Social Democratic Prime Minister. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
+subtitle: Tommy Douglas is a minister hailing from Saskatchewan. He is known for his skill in oratory. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
 is-card: true
 card-image: img/portraits/DouglasTommy.jpg
 tags: center_advisor
@@ -367,7 +367,7 @@ Tommy Douglas is now an advisor.
 
 @add_gardiner
 title: Robert Gardiner
-subtitle: Robert Gardiner comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: Robert Gardiner is a farmer and long serving UFA MP. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/GardinerRobert.jpg
 view-if: gardiner_advisor = 0 and n_advisors < 3
@@ -382,7 +382,7 @@ Robert Gardiner is now an advisor.
 
 @add_macinnis
 title: Angus MacInnis
-subtitle: Angus MacInnis is a one-time Prussian interior minister and police reformer. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
+subtitle: Angus MacInnis is a trade unionist. He was one of the ILP MPs who formed first the Ginger Group and later the CCF. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
 is-card: true
 card-image: img/portraits/MacInnisAngus.jpg
 tags: reformist_advisor
@@ -394,9 +394,9 @@ Angus MacInnis is now an advisor.
 
 @add_woodsworth
 title: JS_Woodsworth
-subtitle: JS_Woodsworth is the Minister-Monarch of Prussia, and one of the most recognizable and well-known Social Democratic leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+subtitle: James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the CCF's Party Leader. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
 is-card: true
-card-image: img/portraits/JS_WoodsworthJS.jpg
+card-image: img/portraits/WoodsworthJS.jpg
 tags: reformist_advisor
 view-if: woodsworth_advisor = 0 and n_advisors < 3
 on-arrival: woodsworth_advisor = 1; n_advisors += 1; reformist_strength += 5
@@ -406,7 +406,7 @@ JS_Woodsworth is now an advisor.
 
 @add_macphail
 title: Agnes Macphail
-subtitle: Agnes Macphail is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+subtitle: Agnes Macphail is the first woman to be elected to the House of Commons. She is a women's rights activist and proponent of peace. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/MacphailAgnes.jpg
 view-if: macphail_advisor = 0 and n_advisors < 3
@@ -418,7 +418,7 @@ Agnes Macphail is now an advisor.
 
 @add_connell
 title: Robert Connell
-subtitle: Robert Connell is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+subtitle: Robert Connell is the BC CCF Party leader. A moderate, he is part of the LSR. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
 is-card: true
 card-image: img/portraits/ConnellRobert.jpg
 view-if: connell_advisor = 0 and n_advisors < 3
@@ -434,7 +434,7 @@ Robert Connell is now an advisor.
 
 @add_knowles
 title: Stanley Knowles
-subtitle: Stanley Knowles is a former CP leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
+subtitle: Stanley Knowles is an MP and an expert on parliamentary procedure. (Joined 1934). {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
 is-card: true
 card-image: img/portraits/KnowlesStanley.jpg
 view-if: knowles_advisor = 0 and knowles_dead = 0 and n_advisors < 3 and left_split = 0
@@ -446,7 +446,7 @@ Stanley Knowles is now an advisor.
 
 @add_jamieson
 title: Laura Jamieson
-subtitle: Laura Jamieson is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Agrarian Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
+subtitle: Laura Jamieson is an anti-war, women's rights, and public education activist. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Agrarian Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/JamiesonLaura.jpeg
 view-if: jamieson_advisor = 0 and n_advisors < 3
@@ -458,7 +458,7 @@ Laura Jamieson is now an advisor.
 
 @add_winch
 title: Ernest Winch
-subtitle: Ernest Winch is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP, Against Toleration ?]
+subtitle: Ernest Winch is a left CCF who has supported other Leftist parties in the past. He is known for seving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP, Against Toleration ?]
 is-card: true
 card-image: img/portraits/WinchErnest.jpg
 view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -470,9 +470,9 @@ Ernest Winch is now an advisor.
 
 @add_irvine
 title: William Irvine
-subtitle: William Irvine is a former leader of the youth wing, current supporter of the left wing of the CCF, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
+subtitle: William Irvine is a social gospeler and has affiliated with the ALP and UFA in the past. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
 is-card: true
-card-image: img/portraits/IrvineWilliams.jpg
+card-image: img/portraits/.jpg
 view-if: seydewitrpc_advisor = 0 and n_advisors < 3 and left_split = 0
 on-arrival: seydewitrpc_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
@@ -482,7 +482,7 @@ William Irvine is now an advisor.
 
 @add_nielsen
 title: Dorise Nielsen
-subtitle: Dorise Nielsen is an and educational reform advocate and pacifist, who was one of the few Canadian women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+subtitle: Dorise Nielsen is a left CCF and campaign manager. (Joined 1934) {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
 card-image: img/portraits/NielsenDorise.png
 view-if: nielsen_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -498,7 +498,7 @@ Dorise Nielsen is now an advisor.
 
 @add_heaps
 title: Albert Heaps
-subtitle: Albert Heaps is the leader of the ADGB, the Canadian Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+subtitle: Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the CCF. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/HeapsAA.jpg
 tags: labor_advisor
@@ -510,7 +510,7 @@ Albert Heaps is now an advisor.
 
 @add_gillis
 title: Clarence Gillis
-subtitle: Clarence Gillis is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+subtitle: Clarence Gillis is a rising member of the United Workers of America. (Joined 1938) {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/GillisClarence.jpg
 tags: labor_advisor
@@ -522,7 +522,7 @@ Clarence Gillis is now an advisor.
 
 @add_noseworthy
 title: Joseph Noseworthy
-subtitle: Joseph Noseworthy is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+subtitle: Joseph Noseworthy is a teacher and moderate CCF. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
 is-card: true
 card-image: img/portraits/NoseworthyJoseph.jpg
 tags: labor_advisor
@@ -535,7 +535,7 @@ Joseph Noseworthy is now an advisor.
 
 @add_forsey
 title: Eugene Forsey
-subtitle: Eugene Forsey is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+subtitle: Eugene Forsey is lecterur on economics and political science. He is a convert from the CPC and member of the LSR. . {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
 is-card: true
 card-image: img/portraits/ForseyEugene.jpg
 tags: labor_advisor
@@ -588,7 +588,7 @@ Julius Leber is now an advisor.
 
 @add_wright
 title: Percy Wright
-subtitle: Percy Wright is one of the few agricultural policy experts in the CCF. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
+subtitle: Percy Wright is a farmer by trade and one of the foremost members of the Agrarian wing. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/WrightPercy.jpg
 view-if: wright_advisor = 0 and n_advisors < 3
@@ -615,7 +615,7 @@ Magnus Hirschfeld is now an advisor.
 
 @add_underhill
 title: Frank Underhill
-subtitle: Frank Underhill is a renowned legal scholar and long-time CCF justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
+subtitle: Frank Underhill is a renowned legal scholar. {} {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
 is-card: true
 card-image: img/portraits/UnderhillFrank.jpg
 view-if: underhill_advisor = 0 and n_advisors < 3
@@ -628,7 +628,7 @@ Frank Underhill is now an advisor.
 
 @add_spry
 title: Graham Spry
-subtitle: Graham Spry is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP ?]
+subtitle: Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Canadian Forum papers. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP ?]
 is-card: true
 card-image: img/portraits/SpryGraham.jpg
 view-if: spry_advisor = 0 and n_advisors < 3
