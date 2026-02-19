@@ -33,7 +33,7 @@ Q.historical_mode = 0;
 Q.old_demographics = 0;
 // use decimals for commons seats
 // TODO: not yet implemented
-Q.use_decimals = 0;
+Q.use_decimals = 1;
 
 // party resources
 Q.resources = 2;
@@ -111,7 +111,7 @@ Q.NSDAP_relation = 0;
 
 Q.cp_leader = "Tim Buck";
 // alternative is the Conciliators as party leader
-Q.ccf_party_leader = "JS_Woodsworth";
+Q.ccf_party_leader = "J.S. Woodsworth";
 Q.cp_party_leader = "Tim Buck";
 Q.cpc_leader = "R. B. Bennett";
 Q.lpc_leader = "Mackenzie King";
@@ -413,7 +413,7 @@ Q.interior_minister = 'von Keudell';
 Q.interior_minister_party = 'SCP';
 Q.justice_minister = 'Hergt';
 Q.justice_minister_party = 'SCP';
-Q.labor_minister = 'JS_Woodsworths';
+Q.labor_minister = 'JS_Woodsworth';
 Q.labor_minister_party = 'RPC';
 Q.reichswehr_minister = 'Groener';
 Q.reichswehr_minister_party = 'I';
@@ -617,7 +617,7 @@ new-page: true
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
-For more information on the politics and government of the Canadian Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+For more information on the politics and government of Canada, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
