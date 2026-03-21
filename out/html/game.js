@@ -25,11 +25,13 @@
   };
 
   window.showStats = function() {
-    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('library')) {
-        window.dendryUI.dendryEngine.goToScene('backSpecialScene');
-    } else {
-        window.dendryUI.dendryEngine.goToScene('library');
-    }
+  var scene = window.dendryUI.dendryEngine.state.sceneId;
+
+  if (scene.startsWith('library') || scene.startsWith('flp_president')) {
+      window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+  } else {
+      window.dendryUI.dendryEngine.goToScene('library');
+  }
   };
 
   window.showMods = function() {
@@ -164,13 +166,105 @@ window.displayText = function (text) {
     return applyWholesome(text);
 };
 
+function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getRelationshipText(value) {
+        if (value === undefined || value === null) return '';
+        if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
+        if (value <= 14.9) return '<span style="color: #FF4500;">Frigid</span>';
+        if (value <= 29.9) return '<span style="color: #FF8C00;">Cold</span>';
+        if (value <= 39.9) return '<span style="color: #FFA500;">Cool</span>';
+        if (value <= 54.9) return '<span style="color: #FFD700;">Neutral</span>';
+        if (value <= 64.9) return '<span style="color: #9ACD32;">Warm</span>';
+        if (value <= 74.9) return '<span style="color: #32CD32;">Friendly</span>';
+        return '<span style="color: #008000;">Very friendly</span>';
+    }
+
+function getPartyIdeology(party, Q) {
+    if (!Q) return 'Unknown';
+    switch(party){
+        case 'CP': 
+            if (Q.cp_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Revolutionary Communism)';
+            if (Q.cp_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
+            return 'Unknown';
+        case 'FLP':
+        case 'CCF':
+            if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #C42424;">Left Wing</span> (Democratic Socialism)';
+            if (Q.flp_ideology === "Social Democracy") return '<span style="color: #607808;">Centre Left</span>  (Social Democracy)';
+            if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
+            return 'Unknown';
+        case 'PPS': 
+            if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Progressivism)';
+            return 'Unknown';
+        case 'LPS': 
+            if (Q.lps_ideology === "Liberalism") return '<span style="color: #C42424;">Centre - Centre Left</span> (Liberalism)';
+            if (Q.lps_ideology === "Social Liberalism") return '<span style="color: #c45724;">Centre Left</span> (Social Liberalism)';
+            if (Q.lps_ideology === "Centrism") return '<span style="color: #b97a7a;">Centrist</span> (Centrism)';
+            return 'Unknown';
+        case 'CPS': 
+            if (Q.cps_ideology === "Conservatism") return '<span style="color: #2464c4;">Centre - Centre Right</span> (Conservatism)';
+            if (Q.cps_ideology === "Social Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Social Conservatism)';
+            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
+            return 'Unknown';
+        case 'SCP': 
+            if (Q.cps_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
+            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.cps_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
+            if (Q.cps_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
+            return 'Unknown';
+        // Organizations below
+        default: 
+            return 'Unknown';
+    }
+
+
+
+}
+
+function getDynamicTooltipContent(searchString, baseTooltip) {
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+
+    if (!Q) return baseTooltip.explanationText;
+
+    const relationMap = {
+        'CP': 'cp_relation',
+        'PPS': 'pps_relation',
+        'LPS': 'lps_relation',
+        'CPS': 'cps_relation',
+        'SCP': 'scp_relation'
+    };
+
+    const ideology = getPartyIdeology(searchString, Q);
+    let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
+
+    // Special case
+    if (searchString === 'FLP' || searchString === 'CCF(SS)') {
+        return result;
+    }
+
+    // Handle relations dynamically
+    const relationKey = relationMap[searchString];
+
+    if (relationKey && Q[relationKey] !== undefined) {
+        const relationText = getRelationshipText(Q[relationKey]);
+        result += '<br>Relation: ' + relationText;
+    }
+
+    return result;
+}
+
+
 function applyWholesome(str) {
     const allWords = new Set([
         ...tooltipList.map(t => t.searchString),
         ...colourList.map(c => c.word)
     ]);
 
-    const regex = new RegExp(`\\b(${[...allWords].join('|')})\\b`, 'g');
+    const words = [...allWords].map(escapeRegex);
+    const regex = new RegExp(`(?<![\\w-])(${words.join('|')})(?![\\w-])`, 'g');
 
     return str.replace(/(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g, (segment) => {
         if (segment.startsWith('<')) return segment;
@@ -187,7 +281,8 @@ function applyWholesome(str) {
             }
 
             if (tooltip) {
-                return `<span class='mytooltip' style='${style}'>${innerText}<span  class='mytooltiptext'>${tooltip.explanationText}</span></span>`;
+                var tooltipContent = getDynamicTooltipContent(match, tooltip);
+                return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;
             }
@@ -340,13 +435,20 @@ document.addEventListener('mousemove', e => {
 
 // President Button
 
-window.goToFLPPresident = function() {
-    window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
-    window.dendryUI.dendryEngine.goToScene("flp_president");
-};
-
 window.goToDepressionSituation = function() {
     window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
     window.dendryUI.dendryEngine.goToScene("Depression_Situation");
 };
 
+
+
+document.addEventListener("click", function(e) {
+  var card = e.target.closest("[go-to]");
+  if (!card) return;
+
+  var scene = card.getAttribute("go-to");
+  if (!scene) return;
+
+  window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
+  window.dendryUI.dendryEngine.goToScene(scene);
+});

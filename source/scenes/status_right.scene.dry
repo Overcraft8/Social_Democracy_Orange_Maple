@@ -2,71 +2,80 @@ title: Party Hierarchy
 new-page: true
 is-special: true
 
-= President of the FLP
+= Party Hierarchy
 
-<div>
-  <img 
-  src="img/portraits/[+ flp_president_img +]" 
-  style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer;"
-  onclick="goToFLPPresident()"
->
+
+<div style="display:flex; gap:1em;">
+
+<a class="card" go-to="flp_president">
+  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
+  <span class="card-caption">Party President</span>
+</a>
+
+<a class="card" go-to="flp_legislative_leader">
+  <img class="card-img" src="img/portraits/[+ flp_legislative_leader_img +]" style="display:block; margin:auto;">
+  <span class="card-caption">Legislative Leader</span>
+</a>
 </div>
 
-= Legislative Party Leader 
+# =============
+# = Board of Directors 
+#
+# <!-- ROW 1 -->
+#
+# <div style="display: flex; justify-content: center; font-size: 12px; gap: 2px; margin-bottom: 4px;">
+#
+#   <div style="text-align: center;">
+#        <p>[+ flp_board_one +]</p>
+#    </div>
+#
+#    <div style="text-align: center;">
+#        <p>[+ flp_board_two +]</p>
+#    </div>
+#
+#</div>
+#
+#<!-- ROW 2 -->
+#
+#<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px;">
+#
+#<div style="text-align: center;">
+#        <p>[+ flp_board_three +]</p>
+#     </div>
+#
+#    <div style="text-align: center;">
+#        <p>[+ flp_board_four +]</p>
+#    </div>
+#</div>
+# ================
 
-<div><img src="img/portraits/[+ flp_legislative_leader_img  +]" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
-<p style="text-align: center;margin-bottom: 0;"> [+ flp_legislative_leader +] </p>
+= Internal Factions of the FLP
 
-= Board of Directors 
+[? if 1 == 1 :
+<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
+Strength: [+ agrarian_strength : strength +] <br>
+Dissent: [+ agrarian_dissent : dissent +]<br>
+Radicalism: [+ agrarian_radicalism : radicalism +]
+?]
 
-<!-- ROW 1 -->
+[? if 1 == 1 :
+<span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span><br>
+Strength: [+ labour_strength : strength +]<br> 
+Dissent: [+ labour_dissent : dissent +]<br>
+Radicalism: [+ labour_radicalism : radicalism +]
+?]
 
-<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px; margin-bottom: 4px;">
+[? if 1 == 1 :
+<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Far Left**</span><br> 
+Strength: [+ far_left_strength : strength +]<br> 
+Dissent: [+ far_left_dissent : dissent +]<br>
+?]
 
-    <div style="text-align: center;">
-        <p>[+ flp_board_one +]</p>
-    </div>
-
-    <div style="text-align: center;">
-        <p>[+ flp_board_two +]</p>
-    </div>
-
-</div>
-
-<!-- ROW 2 -->
-
-<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px;">
-
-<div style="text-align: center;">
-        <p>[+ flp_board_three +]</p>
-    </div>
-
-    <div style="text-align: center;">
-        <p>[+ flp_board_four +]</p>
-    </div>
-</div>
-
-
-@partyfactions
-
-= Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
-
-
-<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span> 
-Strength: [+ agrarian_strength : strength +] 
-Dissent: [+ agrarian_dissent : dissent +]
-
-<span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span> 
-Strength: [+ labour_strength : strength +] 
-Dissent: [+ labour_dissent : dissent +]
-
-<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span> 
-Strength: [+ left_strength : strength +] 
-Dissent: [+ left_dissent : dissent +]
-
-<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span> 
-Strength: [+ reformist_strength : strength +] 
-Dissent: [+ reformist_dissent : dissent +]
+[? if 1 == 1 : 
+<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span><br> 
+Strength: [+ reformist_strength : strength +]<br> 
+Dissent: [+ reformist_dissent : dissent +]<br>
+?]
 
 @partyaffiliates
 
@@ -93,7 +102,7 @@ Strength: [+ ufc_strength +] Thousand<br>
 Influence: [+ sta_influence +]%<br>
 Relations: [+ sta_relations : relationships +]<br>
 Militancy: [+ sta_militancy : militancy +]<br>
-StrengthL [+ sta_strength +] Thousand<br>
+Strength: [+ sta_strength +] Thousand<br>
 ?]
 
 [? if tlc_affiliated == 1 :

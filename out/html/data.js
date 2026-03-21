@@ -28,6 +28,10 @@ const tooltipList = [{
     explanationText: "The United Farmers of Canada (Saskatchewan Section)"
 },
 {
+    searchString: "UFPA",
+    explanationText: "The United Farmers Political Association. \n They have merged into the FLP"
+},
+{
     searchString: "CCYM",
     explanationText: "The Cooperative Commonwealth Youth Movement."
 },
@@ -58,6 +62,10 @@ const tooltipList = [{
 {
     searchString: "TLC", 
     explanationText: "The Trades and Labour Congress of Canada. "
+},
+{
+    searchString: "Res. Workers", 
+    explanationText: "Resource workers (lumber, mining, etc.)"
 },
 ];
 
@@ -92,19 +100,7 @@ const colourList = [{
         style: "color: #86a71b; font-weight: bold;"
     },
     {
-        word: "Agrarian",
-        style: "color: #86a71b; font-weight: bold;"
-    },
-    {
-        word: "agrarian",
-        style: "color: #86a71b; font-weight: bold;"
-    },
-    {
-        word: "Farmer",
-        style: "color: #86a71b; font-weight: bold;"
-    },
-    {
-        word: "farmer",
+        word: "UFPA",
         style: "color: #86a71b; font-weight: bold;"
     },
     {
@@ -112,15 +108,7 @@ const colourList = [{
         style: "color: #b06262; font-weight: bold;"
     },
     {
-        word: "Labour", 
-        style: "color: #0F52BA; font-weight: bold;"
-    },
-    {
-        word: "labour", 
-        style: "color: #0F52BA; font-weight: bold;"
-    },
-    {
-        word: "Left", 
+        word: "Far Left", 
         style: "color: #7b1616; font-weight: bold;"
     },
     {
@@ -134,10 +122,6 @@ const colourList = [{
     {
         word: "CCYM", 
         style: "color: #7b1616; font-weight: bold;"
-    },
-    {
-        word: "Union", 
-        style: "color: #0F52BA; font-weight: bold;"
     },
     {
         word: "FUL", 
@@ -164,7 +148,7 @@ const colourList = [{
         style: "color: #b33a3a; font-weight: bold;"
     },
     // Below this for states of qdisplays
-    //dissents
+    /*
     {
         word: "very low", 
         style: "color: #54e02a; font-weight: bold;"
@@ -238,7 +222,7 @@ const colourList = [{
     {
         word: "Disastrous", 
         style: "color: #e03c2a; font-weight: bold;"
-    },
+    },*/
     // Militancy
     {
         word: "Nonexistent", 
@@ -253,7 +237,7 @@ const colourList = [{
         style: "color: #a0e02a; font-weight: bold;"
     },
     {
-        word: "Medium-Low", 
+        word: "Medium-low", 
         style: "color: #bfe02a; font-weight: bold;"
     },
     {

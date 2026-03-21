@@ -3,6 +3,7 @@ new-page: true
 is-special: true
 go-to: menu
 
+
 = The Library
 
 Herein contains relevant information about the government and politics of the Saskatchewanian republic.
@@ -23,9 +24,11 @@ Herein contains relevant information about the government and politics of the Sa
 @government
 go-to: menu
 
-The Province of Saskatchewan has a unicameral legislature, the Legislative Assembly of Saskatchewan. The Premier is the head of government, and is the leader of the party with the most seats in the Assembly. The Premier appoints a cabinet of ministers to oversee various departments of government. There are 55 seats in the Assembly.  
+The Province of Saskatchewan has a unicameral legislature, the Legislative Assembly of Saskatchewan. The Premier is the head of government, and is the leader of the party with the most seats in the Assembly. The Premier appoints a cabinet of ministers to oversee various departments of government. 
 
-Saskatchewanian provinces oversee various policy areas, including education, healthcare, agriculture, natural resources, among others. 
+The Legislative Assembly is elected based on a first-past-the-post system divided into urban and farmer electoral districts, colloquially referred to as "ridings". 
+
+The Province of Saskatchewan oversees various policy areas, including education, healthcare, agriculture, and natural resources, among others. 
 
 @Saskatchewanian_timeline
 go-to: menu
@@ -44,13 +47,13 @@ go-to: menu
 
 **1905**: Saskatchewan is inaugurated as a province. In the resulting election, the Liberal Party comes to power with the support of the farmers. 
 
-**1920**: The Progressive Party of Canada is formed primarily to combat the powerful rural corporations in favour of the small family farms. They win the second most seats in the 1921 Canadian Federal Election.
+**1920**: The Progressive Party of Canada is formed primarily to combat the powerful farmer corporations in favour of the small family farms. They win the second most seats in the 1921 Canadian Federal Election.
 
 **1923-1924**: 46,000 farmers sign up to form the Saskatchewan Wheat Pool, an agricultural cooperative. 
 
 **1929**: The Great Depression hits Saskatchewan, compounded by the Dust Bowl and the province's reliance on commodity sale. Thousands emigrate from the family farm. Per capita money income falls 75%. 
 
-**1931**: Striking workers at the Bienfait Coal Mine collaborate with the WUL to demand better working conditions from the American owners. When Scabs are prevented from entering the mine, the RCMP is brought in, leading to a resultant riot and the deaths of 3 mine workers. 
+**1931**: Striking workers at the Bienfait Coal Mine collaborate with the WUL to demand better working conditions from the American owners. When scabs are prevented from entering the mine, the RCMP is brought in, resulting in a riot and the deaths of 3 mine workers. 
 
 **1932**: The FLP is formed by a merger of the ILP and the UFC (SS)'s political apparatus. 
 
@@ -59,7 +62,7 @@ go-to: cabinet if flp_in_government; menu if not flp_in_government
 
 = Current Government
 
-Monarch: [+ monarch +]
+Prime Minister: [+ prime_minister +]
 
 Premier: [+ premier +] ([+ premier_party +])
 
@@ -83,11 +86,11 @@ SCP: [+ scp_r +]%
 Others: [+ other_r +]%
 
 FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
-[? if in_weimar_coalition and flp_in_government: Weimar Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_popular_front and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
+[? if in_lps_coalition and flp_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_unity_government and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
 
 [? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if flp_in_government and (in_left_front or in_popular_front): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
+[? if flp_in_government and (in_left_front or in_unity_government): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -122,7 +125,7 @@ go-to: menu
 
 **New Middle**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. This is the base of the FLP. They have been radicalized by the Depression and the Drought they they remain committed to holding their property. 60-65% of the population.
+**Farmers**: Small and large farmers and independent farmer workers. This is the base of the FLP. They have been radicalized by the Depression and the Drought they they remain committed to holding their property. 60-65% of the population.
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the PPS Party (or the Bavarian People's Party in Bavaria).
 
@@ -184,7 +187,7 @@ New Middle Class: FLP: [+ new_middle_flp_display +]%, PPS: [+ new_middle_pps_dis
 
 Old Middle Class: FLP: [+ old_middle_flp_display +]%, PPS: [+ old_middle_pps_display +]%, CP: [+ old_middle_cp_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: FLP: [+ rural_flp_display +]%, PPS: [+ rural_pps_display +]%, CP: [+ rural_cp_display +]%, [+ lps_name +]: [+ rural_lps_display +]%, CPS: [+ rural_cps_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Farmers: FLP: [+ farmer_flp_display +]%, PPS: [+ farmer_pps_display +]%, CP: [+ farmer_cp_display +]%, [+ lps_name +]: [+ farmer_lps_display +]%, CPS: [+ farmer_cps_display +]%; SCP: [+ farmer_scp_display +]%, Others: [+ farmer_other_display +]% [? if sapd_formed: SAPD: [+ farmer_sapd_display +]% ?]
 
 Unemployed: FLP: [+ unemployed_flp_display +]%, PPS: [+ unemployed_pps_display +]%, CP: [+ unemployed_cp_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
@@ -277,23 +280,23 @@ go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Left**
+**Far Left**
 
-Many leftists are former members of the UFLP (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the CP, and some support extraparliamentary action.
+Many far leftists are young radicals. Many are interested in closer cooperation with the CP, and some support extraparliamentary action.
 
-Strength: [+ left_strength : strength +]
+Strength: [+ far_left_strength : strength +]
 
-Dissent: [+ left_dissent : dissent +]
+Dissent: [+ far_left_dissent : dissent +]
 
-**Agrarians**
+**Left Agrarians**
 
-Agrarians in the FLP are followers of the doctrine of orthodox Marxism as expounded by Karl Kautsky and later Alexander Nicholson. They seek a middle course between reform and revolution, while defending the democratic state.
+Left agrarians are the more radical wing of the agrarian base, seeking strong government intervention to protect the traditional small family farms of the province. 
 
 Strength: [+ agrarian_strength : strength +]
 
 Dissent: [+ agrarian_dissent : dissent +]
 
-**Labour**
+**Left Labour**
 
 Many FLP members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
 
@@ -442,7 +445,6 @@ if (d3 && window) {
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#E7DB73'> </div></td><td>!} PPS: {!</td><td>!} [+ pps_r +]% {!</td></tr>!}
-
 
 {!<tr><td><div class="box" style='background-color:#0055A5'> </div></td><td>!} CPS: {!</td><td>!} [+ cps_r +]% {!</td></tr>!}
 
